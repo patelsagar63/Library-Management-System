@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+{% extends 'libapp/base.html' %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% block body_block %}
+    <h4>Suggested items</h4>
+
+    {% if itemlist %}
+        <ol>
+            {% for item in itemlist %}
+                <li >
+                    {{ item}}
+                </li>
+
+            {% endfor %}
+        </ol>
+
+    {% else %}
+        <strong>There is no suggested item!</strong>
+    {% endif %}
+
+{% endblock %}
+</body>
+</html>

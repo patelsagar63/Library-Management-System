@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+
+
+{% extends 'libapp/base.html' %}
+<body>
+{% block body_block %}
+<h4>This is detail page</h4>
+
+{% if item.itemtype == 'Book' %}
+
+    <h3>Book Information: </h3>
+
+  <b> Title: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+  </b> {{ item.title }} </br>
+  <b> Published year: &nbsp;&nbsp;&nbsp; </b> {{ item.pubyr }} </br>
+  <b> Author: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </b> {{ data.author }} </br>
+  <b> Category: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </b> {{ data.category }} </br>
+
+
+{% else %}
+
+    <h3> List of Dvds</h3>
+
+    <b> Title:  </b> {{ item.title }} </br>
+  <b> Published year:  </b> {{ item.pubyr }} </br>
+  <b> Maker:  </b> {{ data.maker }} </br>
+  <b> Duration:  </b> {{ data.duration }} </br>
+  <b> rating:  </b> {{ data.rating }} </br>
+
+{% endif %}
+
+{% endblock %}
+</body>
+</html>

@@ -1,0 +1,20 @@
+{% extends 'libapp/base.html' %}
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'libapp/style.css' %}" />
+</head>
+<body>
+<h2>Register page</h2>
+{% block body_block %}
+    <form action="{% url 'libapp:register' %}" method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+        <input id="mysubmit" type="submit" value="Submit"> &nbsp;&nbsp;&nbsp;&nbsp;
+    </form>
+{% endblock %}
+</body>
+</html>

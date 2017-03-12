@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+     <link rel="stylesheet" type="text/css" href="{% static 'libapp/style.css' %}" />
+</head>
+<body>
+<h1>Log In Page </h1> <br><br>
+
+ <form action="{% url 'libapp:login' %}" method="post">
+{% csrf_token %}
+     <label><strong>Username</strong> <span>*</span></label>
+    <input id="mytext" type="text" name="username"> <br><br>
+
+    <label><strong>Password</strong> <span>*</span></label>
+    <input type="password" name="password"><br><br><br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+     <input type="submit" value="Submit">
+</form>
+
+
+</body>
+</html>

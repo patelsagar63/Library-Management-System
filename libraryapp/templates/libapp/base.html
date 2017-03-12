@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="{% static 'libapp/style.css' %}" />
+        <title>MAC Library APP - {% block title %}Welcome!{% endblock %}</title>
+    </head>
+
+    <body>
+        <div>
+            <h1>{% block myhdg %}
+                {% if user_request.first_name %}
+                Hello {{ user_request.first_name }}
+                 {% else %}
+                 Hello Guest !!
+            {% endif %}
+            {% endblock %}</h1>
+
+            {% if request.user.is_active %}
+
+                <a id="mainlink"href="{%  url 'libapp:index' %}">Index</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                 <a  id="mainlink" href="{%  url 'libapp:myitems' %}">My items</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+                <a id="mainlink"href="{%  url 'libapp:suggestions' %}">Suggestions</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                 <a id="mainlink"href="{%  url 'libapp:about' %}">About</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                 <a id="mainlink" href="{%  url 'libapp:logout' %}">Logout </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            {% else %}
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                 <a id="mainlink"href="{%  url 'libapp:index' %}">Index</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <a id="mainlink"href="{%  url 'libapp:register' %}">Register here</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                 <a id="mainlink"href="{%  url 'libapp:login' %}">Login </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+            {% endif %}
+        </div>
+
+            {% block body_block %}
+             {% endblock %}
+
+
+
+    </body>
+</html>
+
+
+
+

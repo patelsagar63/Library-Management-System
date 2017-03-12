@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+{% extends 'libapp/base.html' %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% block body_block %}
+
+<h3>This is my item page</h3>
+
+<h4>My Checked out Dvds:</h4>
+
+    {% if mydvd %}
+        <ol>
+            {% for item in mydvd %}
+                <li >
+                    {{ item }}
+                </li>
+
+            {% endfor %}
+        </ol>
+
+    {% else %}
+        <strong>There is no checked out Dvds!</strong>
+    {% endif %}
+
+
+    <h4>My Checked out Books</h4>
+
+    {% if mybook %}
+        <ol>
+            {% for item in mybook %}
+                <li >
+                    {{ item }}
+                </li>
+
+            {% endfor %}
+        </ol>
+
+    {% else %}
+        <strong>There is no checked out Book!</strong>
+    {% endif %}
+{% endblock %}
+</body>
+</html>

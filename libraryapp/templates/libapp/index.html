@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+{% extends 'libapp/base.html' %}
+{% load staticfiles %}
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>My Library APP</title>
+     <link rel="stylesheet" type="text/css" href="{% static 'libapp/style.css' %}" />
+</head>
+
+<body>
+{% block body_block %}
+   <h4> Lucky number is:  {{ mynumber }} </h4>
+
+    {% if itemlist %}
+        <h3>List of Library items </h3>
+        <ol>
+            {% for item in itemlist %}
+                <li id="indexlist"> {{ item.itemtype }}:
+                    <a href="{%  url 'libapp:detail' item.id %}">{{ item.title}} </a>
+                </li>
+
+            {% endfor %}
+        </ol>
+
+    {% else %}
+        <strong>There are no available items!</strong>
+    {% endif %}
+
+{% endblock %}
+
+</body>
+
+
+</html>

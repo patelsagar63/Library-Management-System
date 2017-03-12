@@ -1,0 +1,47 @@
+.hbar1 {
+    display: inline;
+    margin: 15px;
+}
+h1 {
+    color: blue;
+    font-size: 20px;
+    font-family: "Arial Unicode MS";
+    font-position: relative;
+}
+
+h4{
+    color: brown;
+}
+
+html{
+	background:url(http://backgroundidea.info/wp-content/uploads/2015/03/light-background-colors-for-websites-maintainwp---keep-your-wordpress-website-safe-secure-wallpaper-hd.jpg) no-repeat;
+  background-size: cover;
+  height:100%;
+}
+input[type=text] {
+ 	display:inline-block;
+  	vertical-align:middle;
+}
+
+input[type=submit] {
+ 	background-color: cadetblue;
+	display: inline-block;
+  font-size: 12px;
+  cursor: pointer;
+	font-size: 100%;
+}
+input[type=button] {
+ 	background-color: cadetblue;
+	display: inline-block;
+  font-size: 12px;
+  cursor: pointer;
+	font-size: 100%;
+}
+
+#indexlist:hover{
+	font-size: 120%;
+}
+
+#mainlink:hover{
+	background-color: aliceblue;
+}

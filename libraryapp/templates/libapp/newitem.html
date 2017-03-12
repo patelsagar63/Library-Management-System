@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>New Item</title>
+</head>
+<body>
+{% extends 'libapp/base.html' %}
+{% block body_block %}
+    <form action="{% url 'libapp:newitem' %}" method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+        <input type="submit" value="Submit">
+</form>
+{% endblock %}
+</body>
+</html>
